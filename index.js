@@ -1,6 +1,18 @@
-let m = 70;
-let l = 1.70;
+"use strict";
 
-let bmi = m / (l * l);
+// Formel: bmi = körpermasse / (körperhöhe in meter) ^ 2
 
-alert(bmi);
+window.addEventListener("load", function() {
+  let button = document.getElementById("calculate");
+  button.addEventListener("click", function() {
+    let heightObj = document.getElementById("height");
+    let weightObj = document.getElementById("weight");
+
+    let height = parseFloat(heightObj.value.replace(",", "."));
+    let weight = parseFloat(weightObj.value)
+
+    let bmi = (weight / (height * height));
+    console.log(bmi);
+
+  });
+});
